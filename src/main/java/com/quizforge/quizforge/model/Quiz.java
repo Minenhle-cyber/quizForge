@@ -1,22 +1,25 @@
 package com.quizforge.quizforge.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Data   //lombok to generate getters, setters, constructors
-@Entity //database table
-
+@Entity
+@Data
 public class Quiz {
-    @Id   //primary key 
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String Category;
-    private int timeLimit;
-    private boolean active;
 
-    
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "category")
+    private String category;
+
+    @Column(name = "time_limit")
+    private int timeLimit;
+
+    @Column(name = "active")
+    private boolean active;
 }
