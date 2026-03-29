@@ -16,6 +16,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/scores/**").permitAll()
                 .requestMatchers("/api/quizzes/**").permitAll()
                 .requestMatchers("/api/questions/**").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
